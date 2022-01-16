@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>test</h1>
+    <sign-in-components />
   </div>
 </template>
 

@@ -9,8 +9,8 @@ module.exports = {
       fallbackLocale: 'pt',
       messages: {
         en,
-        pt
-      }
-    }
-  }
+        pt,
+      },
+    },
+  },
 }

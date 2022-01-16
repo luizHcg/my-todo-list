@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
-import {i18n} from "./i18n";
+// eslint-disable-next-line import/named
+import { i18n } from './i18n'
 
 export default {
   ssr: false,
@@ -7,28 +8,21 @@ export default {
     titleTemplate: '%s - my-to-do-list',
     title: 'my-to-do-list',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''},
-      {name: 'format-detection', content: 'telephone=no'},
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     htmlAttrs: {
-      lang: 'pt'
-    }
+      lang: 'pt',
+    },
   },
   css: [],
   plugins: [],
   components: true,
-  buildModules: [
-    '@nuxt/typescript-build',
-    '@nuxtjs/vuetify',
-  ],
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    '@nuxtjs/i18n',
-  ],
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/i18n'],
   axios: {
     baseURL: '/',
   },
@@ -41,23 +35,23 @@ export default {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      light: true,
+      dark: false,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: colors.purple.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
+          info: colors.purple.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
         },
 
         light: {
-          primary: colors.blue.darken2,
+          primary: colors.purple.darken2,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
+          info: colors.purple.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,

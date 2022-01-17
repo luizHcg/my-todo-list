@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-// eslint-disable-next-line import/named
 import { i18n } from './i18n'
 
 export default {
@@ -24,7 +23,7 @@ export default {
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/i18n'],
   axios: {
-    baseURL: '/',
+    baseURL: process.env.BASE_URL,
   },
   pwa: {
     manifest: {

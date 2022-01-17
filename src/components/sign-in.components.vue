@@ -57,7 +57,9 @@ import { Component } from 'nuxt-property-decorator'
 import AuthData from '~/views/data/auth.data'
 
 @Component
-export default class SignInComponents extends AuthData {}
+export default class SignInComponents extends AuthData {
+
+}
 </script>
 
 <style lang="scss" scoped>

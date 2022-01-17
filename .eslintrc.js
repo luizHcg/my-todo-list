@@ -10,5 +10,7 @@ module.exports = {
     'prettier',
   ],
   plugins: [],
-  rules: {},
+  rules: {
+    'import/named': 'off'
+  },
 }

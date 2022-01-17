@@ -11,6 +11,10 @@
         <v-icon class="mdi mdi-translate" left />
         <span v-text="$i18n.locale" />
       </v-btn>
+
+      <v-btn icon @click="switchTheme">
+        <v-icon :class="`mdi mdi-${theme}`" />
+      </v-btn>
     </v-app-bar>
   </header>
 </template>
@@ -26,6 +30,14 @@ export default class HeaderComponents extends Vue {
       this.$i18n.locale === ENUM_LANG.LOCALE_PT_BR
         ? ENUM_LANG.LOCALE_EN
         : ENUM_LANG.LOCALE_PT_BR
+  }
+
+  private switchTheme(): void {
+    this.$vuetify.theme.dark = !this.$vuetify.theme.dark
+  }
+
+  private get theme(): string {
+    return this.$vuetify.theme.dark ? 'weather-night' : 'weather-sunny'
   }
 }
 </script>

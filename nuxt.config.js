@@ -19,7 +19,7 @@ export default {
     },
   },
   css: [],
-  plugins: [],
+  plugins: ['~/plugins/vuetify.ts'],
   components: true,
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/i18n'],
@@ -38,10 +38,10 @@ export default {
       dark: false,
       themes: {
         dark: {
-          primary: colors.purple.darken2,
+          primary: colors.purple.lighten1,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
-          info: colors.purple.lighten1,
+          info: colors.purple.lighten5,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,

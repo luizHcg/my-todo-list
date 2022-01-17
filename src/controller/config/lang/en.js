@@ -6,5 +6,5 @@ module.exports = {
   pageNotFound: 'Page not found',
   myTodoList: 'My to-do list',
   clickHereToRegister: 'Click here to register',
-  register: 'Register'
+  register: 'Register',
 }

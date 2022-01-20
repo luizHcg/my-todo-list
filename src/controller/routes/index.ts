@@ -1,5 +1,5 @@
 enum ROUTES {
-  'AUTH'= 'authorization'
+  'AUTH' = 'authorization',
 }
 
 export default ROUTES

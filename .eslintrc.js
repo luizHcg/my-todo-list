@@ -11,6 +11,6 @@ module.exports = {
   ],
   plugins: [],
   rules: {
-    'import/named': 'off'
+    'import/named': 'off',
   },
 }

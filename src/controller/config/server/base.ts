@@ -1,5 +1,5 @@
-import {AxiosError} from 'axios'
-import {NuxtAxiosInstance} from "@nuxtjs/axios";
+import { AxiosError } from 'axios'
+import { NuxtAxiosInstance } from '@nuxtjs/axios'
 import { IbaseModel } from '~/model/import/ibase-model'
 import MAKE_URL_UTIL from '~/controller/util/makeUrl.util'
 
@@ -13,13 +13,13 @@ abstract class BaseServer<T extends IbaseModel> {
   }
 
   protected get AXIOS(): NuxtAxiosInstance {
-    return this.axios;
+    return this.axios
   }
 
   public async getAll(): Promise<Array<T>> {
     return await this.axios
       .get(this.URL)
-      .then(r => r.data as Array<T>)
+      .then((r) => r.data as Array<T>)
       .catch((error: AxiosError) => {
         throw error
       })
@@ -28,7 +28,7 @@ abstract class BaseServer<T extends IbaseModel> {
   public async getByID({ id }: T): Promise<T> {
     return await this.axios
       .get(MAKE_URL_UTIL.makeUrl([this.URL, id]))
-      .then(r => r.data as T)
+      .then((r) => r.data as T)
       .catch((error: AxiosError) => {
         throw error
       })
@@ -37,7 +37,7 @@ abstract class BaseServer<T extends IbaseModel> {
   public async save(data: T): Promise<T> {
     return await this.axios
       .post(this.URL, data)
-      .then(r => r.data as T)
+      .then((r) => r.data as T)
       .catch((error: AxiosError) => {
         throw error
       })
@@ -46,7 +46,7 @@ abstract class BaseServer<T extends IbaseModel> {
   public async update(data: T): Promise<T> {
     return await this.axios
       .post(MAKE_URL_UTIL.makeUrl([this.URL, data.id]), data)
-      .then(r => r.data as T)
+      .then((r) => r.data as T)
       .catch((error: AxiosError) => {
         throw error
       })
@@ -55,7 +55,7 @@ abstract class BaseServer<T extends IbaseModel> {
   public async remove({ id }: T): Promise<boolean> {
     return await this.axios
       .delete(MAKE_URL_UTIL.makeUrl([this.URL, id]))
-      .then(r => r.data as boolean)
+      .then((r) => r.data as boolean)
       .catch((error: AxiosError) => {
         throw error
       })
@@ -64,7 +64,7 @@ abstract class BaseServer<T extends IbaseModel> {
   public async enableOrDisable({ id }: T): Promise<boolean> {
     return await this.axios
       .patch(MAKE_URL_UTIL.makeUrl([this.URL, id]))
-      .then(r => r.data as boolean)
+      .then((r) => r.data as boolean)
       .catch((error: AxiosError) => {
         throw error
       })

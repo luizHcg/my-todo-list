@@ -58,7 +58,9 @@ import AuthData from '~/views/data/auth.data'
 
 @Component
 export default class SignInComponents extends AuthData {
-
+  mounted() {
+    console.log(this.DICTIONARY.WELCOME)
+  }
 }
 </script>
 

@@ -14,11 +14,11 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     htmlAttrs: {
-      lang: 'pt',
+      lang: 'pt-BR',
     },
   },
   css: [],
-  plugins: ['~/plugins/vuetify.ts'],
+  plugins: ['~/plugins/vuetify.ts', '~/plugins/mixins.ts'],
   components: true,
   buildModules: ['@nuxt/typescript-build', '@nuxtjs/vuetify'],
   modules: ['@nuxtjs/axios', '@nuxtjs/pwa', '@nuxtjs/i18n'],
@@ -27,7 +27,7 @@ export default {
   },
   pwa: {
     manifest: {
-      lang: 'pt',
+      lang: 'pt-BR',
     },
   },
   i18n,

@@ -4,7 +4,7 @@
       <v-app-bar-nav-icon />
       <v-app-bar-title>
         <v-icon class="mdi mdi-clipboard-list-outline" left />
-        <span v-text="$t('myTodoList')" />
+        <span v-text="$t($dictionary.MY_TODO_LIST)" />
       </v-app-bar-title>
       <v-spacer />
       <v-btn text @click="switchLang">
@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import ENUM_LANG from '~/controller/config/lang/enum-lang'
+import ENUM_LANG from '~/controller/config/lang/dictionary/enum-lang'
 
 @Component
 export default class HeaderComponents extends Vue {

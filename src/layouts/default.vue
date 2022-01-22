@@ -1,6 +1,7 @@
 <template>
   <v-app dark>
     <header-components />
+    <snackbar-components @show-snackbar="showSnackbar" :snackbar="snackbar"/>
     <Nuxt />
   </v-app>
 </template>
@@ -9,8 +10,15 @@
 export default {
   name: 'DefaultLayout',
   data() {
-    return {}
+    return {
+      snackbar: true
+    }
   },
+  methods: {
+    showSnackbar(visible) {
+      this.snackbar = visible
+    }
+  }
 }
 </script>
 

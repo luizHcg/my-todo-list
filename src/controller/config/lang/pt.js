@@ -7,4 +7,5 @@ module.exports = {
   myTodoList: 'Minha lista de tarefas',
   clickHereToRegister: 'Clique aqui para se cadastrar',
   register: 'Cadastrar',
+  requiredField: 'Campo obrigatório!'
 }

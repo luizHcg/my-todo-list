@@ -5,15 +5,18 @@
         <v-toolbar-title v-text="$t('welcome')" />
       </v-toolbar>
 
-      <v-form>
+      <v-form :ref="refNameForm" v-model="validFormLogin" @submit.prevent="signIn(form.validate())">
         <v-container fluid>
           <v-row>
             <v-col>
               <v-text-field
+                v-model="AUTH_MODEL.email"
                 prepend-inner-icon="mdi-account-outline"
                 :label="$t('email')"
                 outlined
                 dense
+                :rules="[RULES.NO_EMPTY(AUTH_MODEL.email)]"
+                required
               />
             </v-col>
           </v-row>
@@ -21,11 +24,14 @@
           <v-row class="pt-0 mt-0">
             <v-col>
               <v-text-field
+                v-model="AUTH_MODEL.password"
                 type="password"
                 prepend-inner-icon="mdi-lock-outline"
-                :label="$t('password')"
+                :label="$t(DICTIONARY.PASSWORD)"
                 outlined
                 dense
+                :rules="[RULES.NO_EMPTY(AUTH_MODEL.password)]"
+                required
               />
             </v-col>
           </v-row>
@@ -33,7 +39,7 @@
           <v-row class="pt-0 mt-0">
             <v-col>
               <v-btn color="primary" type="submit" block>
-                <span v-text="$t('signIn')" />
+                <span v-text="$t(DICTIONARY.SIGN_IN)" />
               </v-btn>
             </v-col>
           </v-row>
@@ -42,7 +48,7 @@
             <v-col>
               <v-divider />
               <v-btn class="mt-6" text block>
-                <span v-text="$t('clickHereToRegister')" />
+                <span v-text="$t(DICTIONARY.CLICK_HERE_TO_REGISTER)" />
               </v-btn>
             </v-col>
           </v-row>
@@ -53,14 +59,19 @@
 </template>
 
 <script lang="ts">
-import { Component } from 'nuxt-property-decorator'
+import { Component, Ref } from 'nuxt-property-decorator'
 import AuthData from '~/views/data/auth.data'
+
+const formRef = 'form-login-ref';
 
 @Component
 export default class SignInComponents extends AuthData {
-  mounted() {
-    console.log(this.DICTIONARY.WELCOME)
-  }
+ private validFormLogin = true;
+
+ @Ref(formRef)
+ private form!: HTMLFormElement;
+
+ private refNameForm = formRef
 }
 </script>
 

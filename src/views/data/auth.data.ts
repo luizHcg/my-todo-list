@@ -7,15 +7,17 @@ abstract class AuthData extends Data {
 
   protected AUTH_MODEL = new Auth()
 
-  protected async signIn(): Promise<void> {
-    await this.server
-      .signIn(this.AUTH_MODEL)
-      .then((r) => {
-        console.log(r)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
+  // eslint-disable-next-line require-await
+  protected async signIn(formValidate: boolean): Promise<void> {
+    if (formValidate)
+      await this.server
+        .signIn(this.AUTH_MODEL)
+        .then((r) => {
+          console.log(r)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
   }
 }
 

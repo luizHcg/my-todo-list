@@ -7,4 +7,5 @@ export enum ENUM_WORD {
   MY_TODO_LIST = 'myTodoList',
   CLICK_HERE_TO_REGISTER = 'clickHereToRegister',
   REGISTER = 'register',
+  REQUIRED_FIELD = 'requiredField'
 }

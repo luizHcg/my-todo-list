@@ -7,4 +7,5 @@ module.exports = {
   myTodoList: 'My to-do list',
   clickHereToRegister: 'Click here to register',
   register: 'Register',
+  requiredField: 'Required field!'
 }
